@@ -23,13 +23,14 @@ body {
 }
 .boxes {
   margin: auto;
-  display: flex;
-  width: 600px;
-  flex-wrap: wrap;
+  display: grid;
+  max-width: 600px;
+  justify-content: center;
+  margin-top: 20px;
+  grid-template-columns: repeat(3, 200px);
 }
 .box {
   color: white;
-  flex-basis: 200px;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -43,6 +44,16 @@ body {
   font-weight: bold;
   transition: 0.3s;
 }
+@media screen and (max-width: 767px) {
+  .boxes {
+    margin-top: 50px;
+    grid-template-columns: repeat(3, 100px);
+  }
+  .box {
+    height: 100px;
+    font-size: 80px;
+  }
+}
 .box:hover {
   background-color: #ffffff92;
 }
@@ -50,6 +61,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .title h1,
+  .title h4 {
+    font-size: 50px;
+  }
 }
 h4,
 h1 {
@@ -106,6 +123,20 @@ h1 {
   cursor: pointer;
   font-size: 40px;
   transition: 0.3s;
+}
+@media screen and (max-width: 767px) {
+  .popup-container {
+    font-size: 40px;
+  }
+  .popup-container h3 {
+    font-size: 40px;
+    text-align: center;
+  }
+  .popup-container button {
+    margin: 20px auto 0;
+    font-size: 20px;
+    padding: 10px 20px;
+  }
 }
 .popup-container button:hover {
   background-color: #1b1b6f;
